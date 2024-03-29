@@ -14,14 +14,104 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url('C:/Users/pasindu malshan/Documents/Varicose_Veins_Classfier/background-image/Varicose_Veins_BG.png');
+  background-size: cover; 
+  background-position: bottom;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: #282c34;
+}
+.App-header h1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  color: #282c34;
+  text-align: center;
+  z-index: 1000;
+}
+
+.content {
+  padding-top: 60px;
+  display: flex;
+  justify-content: space-around; 
+  width: 100%;
+}
+
+.instructions, .upload, .results {
+  flex: 1; 
+  padding: 50px; 
+  
+}
+
+.imagePreview {
+  max-width: 400px;
+  max-height: 400px;
+}
+.classifyButton {
+  background-color: #4CAF50; 
   color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px; 
+  cursor: pointer;
+}
+.imageInput {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #d6d4b1; 
+  color: white;
+  border-radius: 10px; 
+  border: 2px solid #d6d4b1; 
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.imageInput:hover {
+  background-color: #8d9179; 
+  
+}
+.clearButton {
+  background-color: #f44336; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px; 
+  cursor: pointer;
+}
+
+.classifyButton:hover, .clearButton:hover {
+  opacity: 0.8; 
+}
+.viewTreatmentButton {
+  background-color: #4e9cbd; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.viewTreatmentButton:hover {
+  opacity: 0.8;
+}
+.resultContainer {
+  background-color: white; 
+  padding: 20px; 
+  border: 1px solid #ddd; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+  margin-top: 20px;
+  max-width: 400px; 
 }
 
 .App-link {
