@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import './App.css';
 
 function Home() {
@@ -32,20 +33,15 @@ function Home() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/predict', {
-        method: 'POST',
-        body: formData,
+      const response = await axios.post('http://127.0.0.1:5000/predict', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
 
-      if (!response.ok) {
-        const errorText = await response.text(); 
-        throw new Error(`Request failed with status ${response.status}: ${errorText}`);
-      }
-
-      const data = await response.json();
       setClassificationResult({
-        confidence: data.confidence,
-        predictedClass: data.predicted_class,
+        confidence: response.data.confidence,
+        predictedClass: response.data.predicted_class,
       });
     } catch (error) {
       console.error('Error:', error);
